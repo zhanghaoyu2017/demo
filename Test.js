@@ -147,206 +147,53 @@ FGDemo.onmouseleave=function() {
 }
 //右边侧边栏
 //
-function move1(){
-	var div2=document.getElementById("div2");
-	end=7;
-	clearInterval(timer);
-	var speed = 0;
-	var timer = setInterval(function (){
-		var now = parseInt(getStyle(div2,"marginLeft"));
-		if (now < end) {       
-        	speed = 1;
-   		}
-        else {
-        	speed = -1;
-    	}
-		if(now == end){
-			clearInterval(timer);
-		}
-		else{
-			div2.style.marginLeft = now + speed + "px";
-		}
-	},1);
-}
-function move2(){
-	var div2=document.getElementById("div2");
-	end=85;
-	var speed = 0;
-	clearInterval(timer);
-	var timer = setInterval(function (){
-		var now = parseInt(getStyle(div2,"marginLeft"));
-		if (now < end) {     
-        	speed = 1;
-   		}
-        else {
-        	speed = -1;
-    	}
-		if(now == end){
-			clearInterval(timer);
-		}
-		else{
-			div2.style.marginLeft = now + speed + "px";
-		}
-	},1);
-}
-function move3(){
-	var div3=document.getElementById("div3");
-	end=7;
-	clearInterval(timer);
-	var speed = 0;
-	var timer = setInterval(function (){
-		var now = parseInt(getStyle(div3,"marginLeft"));
-		if (now < end) {       
-        	speed = 1;
-   		}
-        else {
-        	speed = -1;
-    	}
-		if(now == end){
-			clearInterval(timer);
-		}
-		else{
-			div3.style.marginLeft = now + speed + "px";
-		}
-	},1);
-}
-function move4(){
-	var div3=document.getElementById("div3");
-	end=85;
-	var speed = 0;
-	var timer = setInterval(function (){
-		var now = parseInt(getStyle(div3,"marginLeft"));
-		if (now < end) {     
-        	speed = 1;
-   		}
-        else {
-        	speed = -1;
-    	}
-		if(now == end){
-			clearInterval(timer);
-		}
-		else{
-			div3.style.marginLeft = now + speed + "px";
-		}
-	},1);
-}
-function move5(){
-	var div4=document.getElementById("div4");
-	end=7;
-	clearInterval(timer);
-	var speed = 0;
-	var timer = setInterval(function (){
-		var now = parseInt(getStyle(div4,"marginLeft"));
-		if (now < end) {       
-        	speed = 1;
-   		}
-        else {
-        	speed = -1;
-    	}
-		if(now == end){
-			clearInterval(timer);
-		}
-		else{
-			div4.style.marginLeft = now + speed + "px";
-		}
-	},1);
-}
-function move6(){
-	var div4=document.getElementById("div4");
-	end=85;
-	var speed = 0;
-	var timer = setInterval(function (){
-		var now = parseInt(getStyle(div4,"marginLeft"));
-		if (now < end) {     
-        	speed = 1;
-   		}
-        else {
-        	speed = -1;
-    	}
-		if(now == end){
-			clearInterval(timer);
-		}
-		else{
-			div4.style.marginLeft = now + speed + "px";
-		}
-	},1);
-}
-function move7(){
-	var div5=document.getElementById("div5");
-	end=7;
-	clearInterval(timer);
-	var speed = 0;
-	var timer = setInterval(function (){
-		var now = parseInt(getStyle(div5,"marginLeft"));
-		if (now < end) {       
-        	speed = 1;
-   		}
-        else {
-        	speed = -1;
-    	}
-		if(now == end){
-			clearInterval(timer);
-		}
-		else{
-			div5.style.marginLeft = now + speed + "px";
-		}
-	},1);
-}
-function move8(){
-	var div5=document.getElementById("div5");
-	end=85;
-	var speed = 0;
-	var timer = setInterval(function (){
-		var now = parseInt(getStyle(div5,"marginLeft"));
-		if (now < end) {     
-        	speed = 1;
-   		}
-        else {
-        	speed = -1;
-    	}
-		if(now == end){
-			clearInterval(timer);
-		}
-		else{
-			div5.style.marginLeft = now + speed + "px";
-		}
-	},1);
-}
-// var a1=document.getElementById("zixun");
-// var a2=document.getElementById("youhuiquan");
-// var timer = null;
-// function{
+var div2=document.getElementById("div2");
+var div3=document.getElementById("div3");
+var div4=document.getElementById("div4");
+var div5=document.getElementById("div5");
 
-// } animates(k,end){
-// 	var rcover = k;
-// 	var speed = 0;
-// 	if(rcover.offsetLeft < end){
-// 		speed=10;
-// 	}
-// 	else{
-// 		speed=-10;
-// 	}
-// 	clearInterval(timer); 
-// 	var tag = function (){
-// 		if(rcover.offsetLeft  == end){
-// 			clearInterval(timer);
-// 		}
-// 		else{
-// 			rcover.style.left = rcover.offsetLeft+ speed + 'px' ;
-// 		}
-// 	} 
-// 	timer = setInterval(tag,30);
-	
-// }
-// a1.onmouseover=function(){	
-//     animates(a1,1397);  
-// }
-// a1.onmouseout=function(){
-// 	animates(a1,1477);
-// }
-// document.getElementById("youhuiquan").onmouseover=function(){	
-//     animates(a2,1397);
-// }
-// document.getElementById("youhuiquan").onmouseout=function(){
-// 	animates (a2,1477);
-// }
+function getStyle(obj, attr){
+	if(obj.currentStyle){
+		return obj.currentStyle[attr];
+	} else {
+		return getComputedStyle(obj)[attr];
+	}
+}
+function animate2(obj,json){
+	clearInterval(obj.timer);
+	obj.timer = setInterval(function(){
+		for(var attr in json){
+			var now = 0;
+			now = parseInt(getStyle(obj,attr));
+			var speed = (json[attr] - now) / 8;
+			speed = speed>0?Math.ceil(speed):Math.floor(speed);
+			var cur = now + speed;
+			obj.style[attr] = cur + 'px';		
+		}
+	}, 10)
+}
+div2.onmouseover=function(){
+	animate2(div2,{right:0})
+}	
+div3.onmouseover=function(){
+	animate2(div3,{right:0})
+}
+div4.onmouseover=function(){
+	animate2(div4,{right:0})
+}
+div5.onmouseover=function(){
+	animate2(div5,{right:0})
+}
+
+div2.onmouseout=function(){
+	animate2(div2,{right:-78})
+}	
+div3.onmouseout=function(){
+	animate2(div3,{right:-78})
+}
+div4.onmouseout=function(){
+	animate2(div4,{right:-78})
+}
+div5.onmouseout=function(){
+	animate2(div5,{right:-78})
+}

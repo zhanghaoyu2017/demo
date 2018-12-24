@@ -2,7 +2,7 @@
 * @Author: 嗨阿森纳
 * @Date:   2018-12-16 19:23:33
 * @Last Modified by:   嗨阿森纳
-* @Last Modified time: 2018-12-24 14:20:20
+* @Last Modified time: 2018-12-24 14:49:23
 */
 *{
 	padding: 0;
@@ -662,10 +662,12 @@ a{
 	overflow:hidden;
 	display:none;
 	z-index: 6;
+	border: 1px #f6f5f4 solid;
 }
 #Bimg{
 	position:absolute;
 	left:0;
 	top:0;
+
 
 }
