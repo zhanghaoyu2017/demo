@@ -2,7 +2,7 @@
 * @Author: 嗨阿森纳
 * @Date:   2018-12-11 19:10:02
 * @Last Modified by:   嗨阿森纳
-* @Last Modified time: 2018-12-17 09:26:13
+* @Last Modified time: 2018-12-23 14:35:51
 */
 *{
 	padding: 0;
@@ -125,7 +125,7 @@ table{
     width: 210px;
     height: 320px;
     float: left;
-     display: inline;
+    display: inline;
 }
 #right1-2 ul{
     text-align: left;
@@ -213,7 +213,7 @@ table{
 .bottom2{
 	margin: 0 auto;
 	width: 1180px;
-	height: 182px;
+	height: 185px;
 	border-bottom: 1px #ebeae8 solid;
 }
 .bottom2-left{
@@ -242,11 +242,21 @@ table{
 	height: 80px;
 	width: 800px;
 	margin: 0 auto;
-	/* m-left: 200px; */
 	padding-top: 117px;
 }
 .bottom-imgs img{
 	padding-left: 5px;
+}
+.bp-1{
+	padding-top: 30px;
+	padding-left: 65px;
+	font-size: 15px;
+}
+.bp-2{
+	padding-left: 65px;
+	padding-top: 14px;
+	font-size: 12px;
+	color: #666560;
 }
 .top_index{
 	width: 90px;
@@ -510,6 +520,10 @@ table{
 	height: 31px;
 	float: right;
 }
+.left4 a span:hover{
+	color: #ff4d04;
+	text-decoration: underline;
+}
 .left4 span{
 	display: block;
 	font-size: 12px;
@@ -588,3 +602,75 @@ table{
 .navs li span{
 	padding-left: 5px;
 }
+/* 隐藏侧边栏 */
+.zixun{
+	width: 130px;
+	height: 105px;
+	right: 0;
+	top: 60px;
+	overflow: hidden;
+	position: fixed;
+	z-index: 10000;
+	
+}
+.zixun2{
+	width: 123px;
+	height: 105px;
+	margin-left: 85px;
+	z-index: 10000;
+	position: absolute;
+}
+.youhuiquan{
+	width: 130px;
+	height: 140px;
+	right: 0;
+	top: 170px;
+	overflow: hidden;
+	position: fixed;
+	z-index: 10000;
+
+} 
+.youhuiquan2{
+	width: 123px;
+	height: 140px;
+	margin-left: 85px;
+	z-index: 10000;
+	background: #ff9260;
+	position: absolute;
+} 
+.erweima{
+	width: 130px;
+	height: 140px;
+	right: 0;
+	top: 315px;
+	overflow: hidden;
+	position: fixed;
+	z-index: 10000;
+
+} 
+.erweima2{
+	width: 123px;
+	height: 140px;
+	margin-left: 85px;
+	z-index: 10000;
+	background: #ff9260;
+	position: absolute;
+} 
+.gouwuche{
+	width: 130px;
+	height: 140px;
+	right: 0;
+	top: 460px;
+	overflow: hidden;
+	position: fixed;
+	z-index: 10000;
+
+} 
+.gouwuche2{
+	width: 123px;
+	height: 140px;
+	margin-left: 85px;
+	z-index: 10000;
+	background: #ff9260;
+	position: absolute;
+} 
