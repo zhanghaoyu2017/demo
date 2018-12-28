@@ -2,7 +2,7 @@
 * @Author: 嗨阿森纳
 * @Date:   2018-12-16 19:23:54
 * @Last Modified by:   嗨阿森纳
-* @Last Modified time: 2018-12-24 14:57:01
+* @Last Modified time: 2018-12-28 14:05:21
 */
 // 头部悬浮
 window.onload = function(){
@@ -120,9 +120,10 @@ img1.onmouseout = function(){
 }
 img1.onmousemove = function(ev){
 	var ev = ev||window.event;
+	var offset = document.documentElement.scrollTop;
 	//(1)根据鼠标的位置，计算放大镜的位置
 	var left = ev.clientX - box.offsetLeft - slider.offsetWidth/2;
-	var top = ev.clientY - box.offsetTop - slider.offsetHeight/2;
+	var top = ev.clientY - box.offsetTop - slider.offsetHeight/2+ offset;
 	var maxLeft = img1.offsetWidth - slider.offsetWidth;
 	var maxTop = img1.offsetHeight- slider.offsetHeight;
 	left = left>maxLeft?maxLeft:left<0?0:left;

@@ -178,8 +178,10 @@ div2.onmouseover=function(){
 div3.onmouseover=function(){
 	animate2(div3,{right:0})
 }
+var i1 = document.getElementById("i1");
 div4.onmouseover=function(){
-	animate2(div4,{right:0})
+	animate2(div4,{right:0});
+	i1.style.left="10px";
 }
 div5.onmouseover=function(){
 	animate2(div5,{right:0})
@@ -192,7 +194,8 @@ div3.onmouseout=function(){
 	animate2(div3,{right:-78})
 }
 div4.onmouseout=function(){
-	animate2(div4,{right:-78})
+	animate2(div4,{right:-78});
+	i1.style.left="45px";
 }
 div5.onmouseout=function(){
 	animate2(div5,{right:-78})
